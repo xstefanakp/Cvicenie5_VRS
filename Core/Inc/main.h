@@ -86,6 +86,8 @@ void Error_Handler(void);
                                                                  1 bit  for subpriority */
 #define NVIC_PRIORITYGROUP_4         ((uint32_t)0x00000003) /*!< 4 bits for pre-emption priority,
                                                                  0 bit  for subpriority */
+
+extern uint8_t switch_state;;
 #endif
 /* USER CODE BEGIN Private defines */
 
