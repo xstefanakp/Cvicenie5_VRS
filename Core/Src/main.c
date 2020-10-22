@@ -65,6 +65,7 @@ void SystemClock_Config(void);
 
 
 uint8_t switch_state = 0;
+
 int main(void)
 {
   /* USER CODE BEGIN 1 */

@@ -1012,10 +1012,10 @@ __STATIC_INLINE uint32_t LL_FLASH_GetLatency(void)
  800075a:	4770      	bx	lr
 
 0800075c <main>:
-  */
 
 
 uint8_t switch_state = 0;
+
 int main(void)
 {
  800075c:	b580      	push	{r7, lr}
