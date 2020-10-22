@@ -70,6 +70,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define BUTTON_Pin LL_GPIO_PIN_3
+#define BUTTON_GPIO_Port GPIOA
 #define LED_Pin LL_GPIO_PIN_3
 #define LED_GPIO_Port GPIOB
 #ifndef NVIC_PRIORITYGROUP_0
