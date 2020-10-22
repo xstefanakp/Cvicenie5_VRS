@@ -72,6 +72,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define BUTTON_Pin LL_GPIO_PIN_3
 #define BUTTON_GPIO_Port GPIOA
+#define BUTTON_EXTI_IRQn EXTI3_IRQn
 #define LED_Pin LL_GPIO_PIN_3
 #define LED_GPIO_Port GPIOB
 #ifndef NVIC_PRIORITYGROUP_0
