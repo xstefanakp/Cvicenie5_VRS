@@ -101,7 +101,17 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  if(switch_state)
+	  {
+		  GPIOB->BSRR |= GPIO_BSRR_BS_3;
+		  for(uint16_t i=0; i<0xFF00; i++){}
+		  GPIOB->BRR |= GPIO_BRR_BR_3;
+		  for(uint16_t i=0; i<0xFF00; i++){}
+	  }
+	  else
+	  {
+		  GPIOB->BRR |= GPIO_BRR_BR_3;
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
