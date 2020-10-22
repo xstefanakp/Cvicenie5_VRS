@@ -21,6 +21,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f3xx_it.h"
+#include "assignment.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */

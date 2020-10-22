@@ -62,6 +62,9 @@ void SystemClock_Config(void);
   * @brief  The application entry point.
   * @retval int
   */
+
+
+uint8_t switch_state = 0;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -103,14 +106,14 @@ int main(void)
     /* USER CODE END WHILE */
 	  if(switch_state)
 	  {
-		  GPIOB->BSRR |= GPIO_BSRR_BS_3;
+		  LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_3);
 		  for(uint16_t i=0; i<0xFF00; i++){}
-		  GPIOB->BRR |= GPIO_BRR_BR_3;
+		  LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_3);
 		  for(uint16_t i=0; i<0xFF00; i++){}
 	  }
 	  else
 	  {
-		  GPIOB->BRR |= GPIO_BRR_BR_3;
+		  LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_3);
 	  }
     /* USER CODE BEGIN 3 */
   }
