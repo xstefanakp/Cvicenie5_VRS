@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "gpio.h"
+#include "assignment.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -152,6 +153,38 @@ void Error_Handler(void)
   /* User can add his own implementation to report the HAL error return state */
 
   /* USER CODE END Error_Handler_Debug */
+}
+
+uint8_t checkButtonState(GPIO_TypeDef* PORT, uint8_t PIN, uint8_t edge, uint8_t samples_window, uint8_t samples_required)
+{
+	  //type your code for "checkButtonState" implementation here:
+
+	uint8_t button_state = 0, timeout = 0;
+
+	while(button_state < samples_required && timeout < samples_window)
+	{
+		if(!(PORT->IDR & (edge << PIN))/*LL_GPIO_IsInputPinSet(PORT, PIN)*/)
+		{
+			button_state += 1;
+		}
+		else
+		{
+			button_state = 0;
+		}
+
+		timeout += 1;
+		LL_mDelay(1);
+	}
+
+	if((button_state >= 20) && (timeout <= 50))
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+
 }
 
 #ifdef  USE_FULL_ASSERT
