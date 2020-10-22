@@ -1,12 +1,12 @@
 /*
- * assignement.h
+ * assignment.h
  *
- *  Created on: Oct 13, 2020
- *      Author: stancoj
+ *  Created on: 22. 10. 2020
+ *      Author: vladisvova
  */
 
-#ifndef ASSIGNMENT_H_
-#define ASSIGNMENT_H_
+#ifndef INC_ASSIGNMENT_H_
+#define INC_ASSIGNMENT_H_
 
 #include "main.h"
 
@@ -35,4 +35,5 @@
  */
 uint8_t checkButtonState(GPIO_TypeDef* PORT, uint8_t PIN, uint8_t edge, uint8_t samples_window, uint8_t samples_required);
 
-#endif /* ASSIGNMENT_H_ */
+#endif /* INC_ASSIGNMENT_H_ */
+
